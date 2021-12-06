@@ -1,0 +1,3 @@
+2021-12-06 12:00:00,052 - INFO - sleepy_function has been called
+2021-12-06 12:00:03,058 - INFO - sleepy_function has been finished
+2021-12-06 12:00:03,058 - INFO - Execution time of wrapper was 3006.5s
