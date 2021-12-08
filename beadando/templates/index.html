@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <title>Főoldal</title>
+</head>
+    <body>
+        {% if data != 0 %}
+            <table>
+                <tr>
+                    <th>Azonosító</th>
+                    <th>Hőmérséklet</th>
+                    <th>Páratartalom</th>
+                    <th>Fényesség</th>
+                    <th>Ídőpont</th>
+                <tr>
+                <tr>
+                    <td>{{ data["id"] }}</td>
+                    <td>{{ data["temperature"] }} °C</td>
+                    <td>{{ data["humidity"] }} %</td>
+                    <td>{{ data["brightness"] }}</td>
+                    <td>{{ data["time"] }}</td>
+                <tr>
+            </table>
+            <br>
+        {% endif %}
+
+        {% for detail in greenhouse %}
+            <a href="/?id={{ detail['id'] }}">{{ detail["id"]+1 }}. megfigyelés</a><br>
+        {% endfor %}
+
+
+        <br><br><br><br>
+
+        <h2>Új megfigyelés rögzítése</h2>
+        <form method="post" action="/add">
+            <table>
+                <tr>
+                    <td>Hőmérséklet</td>
+                    <td><input type="text" name="temperature"></td>
+                </tr>
+                <tr>
+                    <td>Páratartalom</td>
+                    <td><input type="number" min="0" max="100" name="humidity"></td>
+                </tr>
+                <tr>
+                    <td>Fényesség</td>
+                    <td><input type="number" name="brightness"></td>
+                </tr>
+                <tr>
+                    <td>Időpont</td>
+                    <td><input type="text" name="time"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Megfigyelés felvétele">
+        </form>
+    </body>
+</html>
