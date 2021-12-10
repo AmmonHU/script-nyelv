@@ -18,6 +18,9 @@ def index():
 
 @app.route('/add', methods=['POST'])
 def record():
+    if request.form["temperature"] == "" or request.form["humidity"] == "" or request.form["brightness"] == "" or request.form["time"] == "":
+        return "Minden adat megadása kötelező!", 400
+
     records = json.load(open('greenhouse.json', ))
 
     record = {
@@ -45,7 +48,7 @@ def record():
         validate(instance=record, schema=pattern)
         error = False
     except:
-        return 'Hiba történt, kérem próbálja újra!'
+        return 'Hiba történt, kérem próbálja újra!', 400
 
     if not error:
         records.append(record)

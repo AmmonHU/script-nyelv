@@ -33,5 +33,19 @@
     "id": 4,
     "temperature": "19",
     "time": "17:25"
+  },
+  {
+    "brightness": 2000,
+    "humidity": 59,
+    "id": 5,
+    "temperature": "18",
+    "time": "8:51"
+  },
+  {
+    "brightness": 112,
+    "humidity": 100,
+    "id": 6,
+    "temperature": "15",
+    "time": "k\u00e9sz"
   }
 ]
